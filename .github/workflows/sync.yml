@@ -11,6 +11,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+    - uses: actions/checkout@v2
     - name: Set upstream
       run: |
         git remote add -f upstream "https://github.com/nightscout/AndroidAPS.git"
