@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Clean
-      run: rm -rf "${{ github.workspace }}"
+      run: rm -rf "${{ github.workspace }}" && mkdir "${{ github.workspace }}"
     - uses: actions/checkout@v2
     - name: Add Remote
       run: git remote add -f upstream "https://github.com/nightscout/AndroidAPS"
