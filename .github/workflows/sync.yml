@@ -11,12 +11,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v2
     - name: Clean
-      run: git clean -df
+      run: rm -rf "${{ github.workspace }}"
+    - uses: actions/checkout@v2
     - name: Add Remote
-      continue-on-error: true
-      run: git remote add -f upstream "https://github.com/nightscout/AndroidAPS.git"
+      run: git remote add -f upstream "https://github.com/nightscout/AndroidAPS"
     - name: Checkout
       run: git checkout master
     - name: Merge
