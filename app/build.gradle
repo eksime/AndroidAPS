@@ -144,9 +144,18 @@ android {
         disable 'MissingTranslation'
         disable 'ExtraTranslation'
     }
+    signingConfigs {
+        release {
+            storeFile file("${System.env.KEY_STORE}")
+            storePassword "${System.env.KEY_STORE_PASSWORD}"
+            keyAlias "${System.env.KEY_ALIAS}"
+            keyPassword "${System.env.KEY_PASSWORD}"
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
