@@ -1,0 +1,13 @@
+name: Merge Upstream
+
+on:
+  schedule:
+  - cron: "* * * * *"
+
+jobs:
+  merge-upstream:
+    runs-on: self-hosted
+
+    steps:
+    - name: Set upstream
+      run: echo "${{ github.event.inputs.upstream }}"
