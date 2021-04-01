@@ -16,6 +16,7 @@ jobs:
         fetch-depth: 0
     - name: Add Remote
       run: git remote add -f upstream "https://github.com/nightscout/AndroidAPS"
+      continue-on-error: true
     - name: Checkout
       run: git checkout master
     - name: Merge
